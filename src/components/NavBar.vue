@@ -1,18 +1,10 @@
 <template>
     <div class="navBar">
-        <router-link to="/home" title="Home" class="navBar__logoLink navBar__link">
-            <span class="material-icons navBar__logo">bug_report</span>
-            Bugly
+        <router-link to="/home" title="Home" class="navBar__logoLink">
+            <span class="material-icons navBar__logo">report</span>
+            <span>Dumb Dumb</span>
         </router-link>
         <span class="navBar__spacer"></span>
-        <router-link to="/home" title="Home" class="navBar__link">
-            <span class="material-icons navBar__icon">home</span>
-            Home
-        </router-link>
-        <router-link to="/home" title="Admin" class="navBar__link">
-            <span class="material-icons navBar__icon">lock</span>
-            Admin
-        </router-link>
         <router-link to="/home" title="Home" class="navBar__link navBar__button">
             <span class="material-icons navBar__icon">face</span>
             {{ user }}
@@ -42,18 +34,20 @@
 }
 .navBar__logo {
     color: #FF4139;
-    font-size: 2rem;
-    transform: rotate(15deg);
+    font-size: 2.5rem;
     margin-right: 5px;
 }
 .navBar__link {
     font-size: 1.2rem;
     width: 150px;
-    margin-right: 40px;
     display: flex;
 }
 .navBar__logoLink {
     align-items: center;
+    width: 225px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
 }
 .navBar__icon {
     margin-right: 5px;

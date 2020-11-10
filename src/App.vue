@@ -12,10 +12,6 @@
   }
 </script>
 <style>
-  /*272727*/
-  /*F1D302*/
-  /*449DD1*/
-  /*7A8B99*/
 body {
   margin: 0;
   color: #272727;

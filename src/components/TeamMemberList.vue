@@ -1,41 +1,34 @@
 <template>
-    <div class="teamMemberList">
-        <table>
-            <thead>
-                <th scope="col" class="table__nameHeader">Name</th>
-                <th scope="col" class="table__startDateHeader">Start Date</th>
-                <th scope="col" class="table__dumbCountHeader">Dumb Count</th>
-                <th scope="col" class="table__dumbRatingHeader">Dumb Rating</th>
-            </thead>
-            <tbody>
-                <tr
-                    class="teamMemberList__item"
-                    v-for="member in memberList"
-                    :key="member.id"
-                >
-                    <td>
-                        {{ member.name }}
-                    </td>
-                    <td>
-                        {{ member.startDate }}
-                    </td>
-                    <td>
-                        {{ member.count }}
-                    </td>
-                    <td>
-                        REAL DUMB
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div>
+        <h1>Team Member Dumb Level</h1>
+        <div class="teamMemberList">
+            <div class="teamMemberList__headerRow">
+                <div class="teamMemberList__headerCell">
+                    Name
+                </div>
+                <div class="teamMemberList__headerCell">
+                    Start Date
+                </div>
+                <div class="teamMemberList__headerCell">
+                    Dumb Count
+                </div>
+                <div class="teamMemberList__headerCell">
+                    Dumb Level
+                </div>
+                <div class="teamMemberList__headerCell"/>
+            </div>
+            <TeamMemberListItem v-for="member in memberList" :member="member" :key="member.id" class="teamMemberList__listItem"/>
+        </div>
     </div>
 </template>
 
 <script>
     import members from "../data/members";
+    import TeamMemberListItem from "@/components/TeamMemberListItem";
     export default {
         name: "TeamMemberList",
         components: {
+            TeamMemberListItem
         },
         data() {
             return {
@@ -45,32 +38,24 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+    @import 'src/styles/theme.scss';
+    h1 {
+        font-weight: bold;
+    }
     .teamMemberList {
-        margin-top: 20px;
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
-        }
-
-        .table__nameHeader {
-            width: 30%;
-        }
-
-        .table__startDateHeader {
-            width: 15%;
-        }
-
-        .table__dumbCountHeader {
-            width: 15%
-        }
-
-        .table__dumbRatingHeader {
-            width: 40%;
-        }
-
+        margin: 30px 80px;
+    }
+    .teamMemberList__headerRow {
+        display: flex;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    .teamMemberList__headerCell {
+        width: 20%;
+    }
+    .teamMemberList__listItem:nth-child(odd) {
+         background-color: var(--background-alt);
     }
 
 </style>

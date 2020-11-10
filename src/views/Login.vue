@@ -1,10 +1,10 @@
 <template>
     <div class="login">
         <div class="login__iconCircle">
-            <span class="material-icons login__bugIcon">bug_report</span>
+            <span class="material-icons login__bugIcon">report</span>
         </div>
         <div class="login__title">
-            Bugly
+            Dumb Dumb
         </div>
         <div class="login__form">
             <input type="text" id="username" v-model="username" placeholder="Username" class="login__input"/>
@@ -43,7 +43,8 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss">
+    @import 'src/styles/theme.scss';
 .login {
     margin-top: 80px;
 }
@@ -51,7 +52,7 @@
     height: 175px;
     width: 175px;
     border-radius: 50%;
-    background-color: #FF4139;
+    background-color: var(--app-red);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,9 +60,8 @@
     margin-right: auto;
 }
 .login__bugIcon {
-    font-size: 6.25em;
+    font-size: 8.25em;
     color: #FBF5F3;
-    transform: rotate(15deg);
 }
 .login__title {
     font-size: 2.5em;
@@ -92,5 +92,17 @@
     color: #FBF5F3;
     font-size: 1.15em;
     cursor: pointer;
+    transition: .1s;
 }
+    .login__button:hover {
+        box-shadow: 2px 2px 3px var(--app-grey);
+    }
+    .login__button:active {
+        outline: none;
+        transform: scale(.98);
+    }
+    .login__button:focus {
+        outline: none;
+    }
+
 </style>
