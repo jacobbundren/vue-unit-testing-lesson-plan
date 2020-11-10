@@ -1,13 +1,20 @@
 <template>
-    $END$
+  <div class="home">
+    <TeamMemberList class="home__memberList"></TeamMemberList>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "Home.vue"
-    }
-</script>
+// @ is an alias to /src
+import TeamMemberList from '@/components/TeamMemberList.vue'
 
-<style scoped>
+export default {
+  name: 'Home',
+  components: {
+    TeamMemberList
+  }
+}
+</script>
+<style>
 
 </style>
