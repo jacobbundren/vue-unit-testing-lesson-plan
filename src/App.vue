@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NavBar v-if="$route.name !== 'login'"></NavBar>
+    <router-view/>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  import NavBar from "@/components/NavBar";
+  export default {
+    name: "App",
+    components: { NavBar }
   }
-}
 </script>
-
 <style>
+body {
+  margin: 0;
+  color: #272727;
+  background-color: #FBF5F3;
+}
+a {
+  color: #272727;
+  text-decoration: none;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
