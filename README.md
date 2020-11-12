@@ -1,4 +1,4 @@
-# bug-count
+# Unit Testing with Vue.js
 
 ## Project setup
 ```
@@ -10,15 +10,15 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+### Run unit tests
+```$xslt
+npm run test:unit
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Brief Agenda
+#### 1. Frameworks
+#### 2. Unit test philosophy meets Vue.js
+#### 3. Introduction to Vue Test Utils using TeamMemberListItem.vue
+#### 3. Testing rendered output using TeamMemberListItem.vue
+#### 4. Testing methods using TeamMemberListItem.vue
+#### 5. Stubbing and spying using Login.vue

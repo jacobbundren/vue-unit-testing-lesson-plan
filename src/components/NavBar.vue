@@ -6,7 +6,12 @@
         </router-link>
         <span class="navBar__spacer"></span>
         <router-link to="/home" title="Home" class="navBar__link navBar__button">
-            <span class="material-icons navBar__icon">face</span>
+            <span
+                    class="material-icons navBar__icon"
+                    @mouseenter="isHovering = true"
+                    @mouseleave="isHovering = false"
+                    :class="{hovering: isHovering}"
+            >face</span>
             {{ user }}
         </router-link>
     </div>
@@ -18,6 +23,11 @@
         computed: {
             user: function() {
                 return this.$store.state.authenticatedUser;
+            }
+        },
+        data() {
+            return {
+                isHovering: false
             }
         }
     }
@@ -51,6 +61,13 @@
 }
 .navBar__icon {
     margin-right: 5px;
+}
+
+/*
+I know this is a terrible way to do this, but it works for the example!
+*/
+.hovering {
+    color: #FF4139;
 }
 .navBar__spacer {
     width: 100%;
