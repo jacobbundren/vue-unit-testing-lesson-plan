@@ -11,6 +11,9 @@ export default new Vuex.Store({
   mutations: {
     setAuthenticatedUser: (state, user) => {
       state.authenticatedUser = user;
+    },
+    setUsers: (state, users) => {
+      state.users = users;
     }
   },
   actions: {

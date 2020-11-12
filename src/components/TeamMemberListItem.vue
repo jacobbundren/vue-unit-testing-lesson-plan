@@ -1,15 +1,15 @@
 <template>
     <div class="teamMemberListItem__row">
-        <div class="teamMemberListItem__cell">
+        <div class="teamMemberListItem__cell teamMemberListItem__name">
             {{ member.name }}
         </div>
-        <div class="teamMemberListItem__cell">
+        <div class="teamMemberListItem__cell teamMemberListItem__startDate">
             {{ member.startDate }}
         </div>
-        <div class="teamMemberListItem__cell">
-            {{ member.count }}
+        <div class="teamMemberListItem__cell teamMemberListItem__count">
+            {{ count }}
         </div>
-        <div class="teamMemberListItem__cell">
+        <div class="teamMemberListItem__cell teamMemberListItem__dumbLevel">
             {{ calculateDumbLevel }}
         </div>
         <div class="teamMemberListItem__buttonCell">
@@ -26,22 +26,26 @@
                 type: Object
             }
         },
+        data() {
+            return {
+                count: this.member.count
+            }
+        },
         methods: {
             addDumb() {
-                this.member.count = this.member.count + 1;
+                this.count++;
             },
-
         },
         computed: {
             calculateDumbLevel() {
                 let dumbLevel = "";
-                if (this.member.count === 0) {
+                if (this.count === 0) {
                     dumbLevel = "Smart... For Now";
-                } else if (this.member.count >= 1 && this.member.count < 5) {
+                } else if (this.count >= 1 && this.count < 5) {
                     dumbLevel = "Barely Dumb";
-                } else if (this.member.count >= 5 && this.member.count < 10) {
+                } else if (this.count >= 5 && this.count < 10) {
                     dumbLevel = "Dumb";
-                } else if (this.member.count >= 10 && this.member.count < 15) {
+                } else if (this.count >= 10 && this.count < 15) {
                     dumbLevel = "Dangerously Dumb";
                 } else {
                     dumbLevel = "Jimmy Level Dumb"

@@ -52,6 +52,10 @@
 .navBar__icon {
     margin-right: 5px;
 }
+
+.navBar__icon:hover {
+    color: #FF4139;
+}
 .navBar__spacer {
     width: 100%;
 }
