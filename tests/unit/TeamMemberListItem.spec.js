@@ -32,7 +32,7 @@ describe("TeamMemberListItem", function() {
                     member: member
                 }
             });
-            actualResult = wrapper.find(".teamMemberListItem__name").text();
+            actualResult = wrapper.get(".teamMemberListItem__name").text();
             // Assert
             expect(actualResult).to.equal(expectedResult);
         });
@@ -49,11 +49,11 @@ describe("TeamMemberListItem", function() {
                     member: member
                 }
             });
-            expect(wrapper.find(".teamMemberListItem__count").text()).to.equal("10");
-            let button = wrapper.find(".teamMemberListItem__button");
+            expect(wrapper.get(".teamMemberListItem__count").text()).to.equal("10");
+            let button = wrapper.get(".teamMemberListItem__button");
             // Act
             await button.trigger("click");
-            actualResult = wrapper.find(".teamMemberListItem__count").text();
+            actualResult = wrapper.get(".teamMemberListItem__count").text();
             // Assert
             expect(actualResult).to.equal("11");
         });

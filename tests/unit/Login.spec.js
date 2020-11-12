@@ -10,7 +10,8 @@ chai.use(sinonChai);
 
 describe("Login", function() {
     let wrapper;
-    let mockStore;
+    let stubStore;
+    // eslint-disable-next-line no-unused-vars
     let mockAwn;
     let username = "";
     let password = "";
@@ -19,30 +20,35 @@ describe("Login", function() {
         wrapper = null;
         username = "";
         password = "";
-        mockStore = null;
+        stubStore = null;
         mockAwn = null;
     });
     it("calls login action with correct values", async function() {
         // Arrange
         username = "admin";
         password = "password";
-        mockStore = {
+        stubStore = {
             dispatch: sinon.stub().resolves(true)
         };
         wrapper = shallowMount(Login, {
             mocks: {
-                $store: mockStore
+                $store: stubStore
             },
         });
         // Act
-        let usernameInput = wrapper.find("#username");
-        let passwordInput = wrapper.find("#password");
-        let loginButton = wrapper.find(".login__button");
+        let usernameInput = wrapper.get("#username");
+        let passwordInput = wrapper.get("#password");
+        let loginButton = wrapper.get(".login__button");
         usernameInput.setValue(username);
+        /*
+        same as saying:
+        usernameInput.element.value = username;
+        await usernameInput.trigger("change");
+         */
         passwordInput.setValue(password);
         await loginButton.trigger("click");
         // Assert
-        expect(mockStore.dispatch).to.have.been.calledWith("login", {username: username, password: password});
+        expect(stubStore.dispatch).to.have.been.calledWith("login", {username: username, password: password});
     });
     it("pushes correct path to the router", async function() {
         // Arrange
@@ -58,20 +64,20 @@ describe("Login", function() {
         });
         username = "admin";
         password = "password";
-        mockStore = {
+        stubStore = {
             dispatch: sinon.stub().resolves(true)
         };
         wrapper = shallowMount(Login, {
             localVue: localVue,
             router: router,
             mocks: {
-                $store: mockStore
+                $store: stubStore
             },
         });
         // Act
-        let usernameInput = wrapper.find("#username");
-        let passwordInput = wrapper.find("#password");
-        let loginButton = wrapper.find(".login__button");
+        let usernameInput = wrapper.get("#username");
+        let passwordInput = wrapper.get("#password");
+        let loginButton = wrapper.get(".login__button");
         usernameInput.setValue(username);
         passwordInput.setValue(password);
         await loginButton.trigger("click");
