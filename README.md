@@ -24,8 +24,8 @@ npm run test:unit
 #### 6. Testing methods using TeamMemberListItem.vue
 #### 7. Stubbing and spying using Login.vue
 
-###Important Documentation:
-#####[BDD Chai Expectations](https://www.chaijs.com/api/bdd/)
-#####[Vue Test Utils Mounting](https://vue-test-utils.vuejs.org/api/options.html)
-#####[Vue Test Utils Wrapper](https://vue-test-utils.vuejs.org/api/wrapper/)
-#####[Sinon Documentation](https://sinonjs.org/releases/v9.2.1/)
+### Important Documentation:
+##### [BDD Chai Expectations](https://www.chaijs.com/api/bdd/)
+##### [Vue Test Utils Mounting](https://vue-test-utils.vuejs.org/api/options.html)
+##### [Vue Test Utils Wrapper](https://vue-test-utils.vuejs.org/api/wrapper/)
+##### [Sinon Documentation](https://sinonjs.org/releases/v9.2.1/)
